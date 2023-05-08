@@ -9,6 +9,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Minicli\App;
 use Minicli\Exception\CommandNotFoundException;
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 $app = new App([
     'app_path' => [
@@ -17,6 +19,19 @@ $app = new App([
     ],
     'debug' => true
 ]);
+
+$loader = new FilesystemLoader(__DIR__ . '/app/Views');
+$twig = new Environment($loader, [
+    'cache' => __DIR__ . '/app/Views/cache',
+]);
+
+if (! function_exists('view')) {
+    function view(string $template, array $data = []): string
+    {
+        global $twig;
+        return $twig->render($template, $data);
+    }
+}
 
 try {
     $app->runCommand($argv);
