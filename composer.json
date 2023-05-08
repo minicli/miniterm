@@ -17,10 +17,12 @@
     "twig/twig": "^3.6"
   },
   "require-dev": {
-    "pestphp/pest": "^1.21"
+    "pestphp/pest": "^1.21",
+    "laravel/pint": "^1.10"
   },
   "scripts": {
-    "test" : ["pest"]
+    "test" : ["pest"],
+    "lint" : ["pint"]
   },
   "config": {
     "allow-plugins": {

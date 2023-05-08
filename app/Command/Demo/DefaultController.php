@@ -3,6 +3,7 @@
 namespace App\Command\Demo;
 
 use Minicli\Command\CommandController;
+
 use function Termwind\render;
 
 class DefaultController extends CommandController
@@ -19,4 +20,3 @@ class DefaultController extends CommandController
         HTML);
     }
 }
-

@@ -3,6 +3,7 @@
 namespace App\Command\Demo;
 
 use Minicli\Command\CommandController;
+
 use function Termwind\render;
 
 class TableController extends CommandController

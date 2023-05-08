@@ -3,6 +3,7 @@
 namespace App\Command\Demo;
 
 use Minicli\Command\CommandController;
+
 use function Termwind\ask;
 use function Termwind\render;
 
@@ -26,4 +27,3 @@ class AskController extends CommandController
         HTML);
     }
 }
-
