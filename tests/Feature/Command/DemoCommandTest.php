@@ -1,16 +1,28 @@
 <?php
 
 test('default command "demo" is correctly loaded', function () {
+    $output = getOutput();
+
     $app = getApp();
     $app->runCommand(['minicli', 'demo']);
-})->expectOutputRegex("/help/");
+
+    expect($output->fetch())->toContain('help');
+});
 
 test('the "demo test" command echoes command parameters', function () {
+    $output = getOutput();
+
     $app = getApp();
     $app->runCommand(['minicli', 'demo', 'test', 'user=erika']);
-})->expectOutputRegex("/erika/");
+
+    expect($output->fetch())->toContain('Hello, erika');
+});
 
 test('the "demo table" command prints test table', function () {
+    $output = getOutput();
+
     $app = getApp();
     $app->runCommand(['minicli', 'demo', 'table']);
-})->expectOutputRegex("/Header 3/");
+
+    expect($output->fetch())->toContain('Header 3');
+});

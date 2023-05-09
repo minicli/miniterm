@@ -2,11 +2,11 @@
 
 namespace App\Command\Demo;
 
-use Minicli\Command\CommandController;
+use App\Command\BaseController;
 
 use function Termwind\render;
 
-class TestController extends CommandController
+class TestController extends BaseController
 {
     public function handle(): void
     {

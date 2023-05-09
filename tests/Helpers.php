@@ -1,7 +1,11 @@
 <?php
 
+use App\Services\TwigService;
 use Minicli\App;
 use Minicli\Command\CommandCall;
+use Symfony\Component\Console\Output\BufferedOutput;
+
+use function Termwind\renderUsing;
 
 function getCommandsPath(): string
 {
@@ -14,7 +18,12 @@ function getApp(): App
         'app_path' => getCommandsPath()
     ];
 
-    return new App($config);
+    $twigService = new TwigService();
+
+    $app = new App($config);
+    $app->addService('twig', $twigService);
+
+    return $app;
 }
 
 function getProdApp(): App
@@ -30,4 +39,12 @@ function getProdApp(): App
 function getCommandCall(array $parameters = null): CommandCall
 {
     return new CommandCall(array_merge(['minicli'], $parameters));
+}
+
+function getOutput(): BufferedOutput
+{
+    $output = new BufferedOutput();
+    renderUsing($output);
+
+    return $output;
 }
