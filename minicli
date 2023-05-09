@@ -7,6 +7,7 @@ if (php_sapi_name() !== 'cli') {
 
 require __DIR__ . '/vendor/autoload.php';
 
+use App\Services\TermwindService;
 use App\Services\TwigService;
 use Minicli\App;
 use Minicli\Exception\CommandNotFoundException;
@@ -18,6 +19,10 @@ $app = new App([
     ],
     'debug' => true
 ]);
+
+// Register Termwind Service
+$termwindService = new TermwindService();
+$app->addService('termwind', $termwindService);
 
 // Register Twig Service
 $twigService = new TwigService();

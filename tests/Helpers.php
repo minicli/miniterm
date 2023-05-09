@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\TermwindService;
 use App\Services\TwigService;
 use Minicli\App;
 use Minicli\Command\CommandCall;
@@ -18,9 +19,11 @@ function getApp(): App
         'app_path' => getCommandsPath()
     ];
 
+    $termwindService = new TermwindService();
     $twigService = new TwigService();
 
     $app = new App($config);
+    $app->addService('termwind', $termwindService);
     $app->addService('twig', $twigService);
 
     return $app;

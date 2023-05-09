@@ -3,9 +3,6 @@
 namespace App\Command\Demo;
 
 use App\Command\BaseController;
-
-use function Termwind\render;
-
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
@@ -26,7 +23,7 @@ class TableController extends BaseController
             $rows[] = [(string) $i, (string) rand(0, 10), "other string $i"];
         }
 
-        render($this->view('table.html', [
+        $this->render($this->view('table.html', [
             'headers' => $headers,
             'rows' => $rows
         ]));
