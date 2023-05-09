@@ -37,8 +37,10 @@ abstract class BaseController extends CommandController
      * @throws SyntaxError
      * @throws LoaderError
      */
-    protected function view(string $template, array $data = []): string
+    protected function view(string $template, array $data = []): void
     {
-        return $this->getApp()->twig->view($template, $data);
+        $app = $this->getApp();
+
+        $app->termwind->render($app->twig->view($template, $data));
     }
 }

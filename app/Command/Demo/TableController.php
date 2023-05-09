@@ -23,9 +23,9 @@ class TableController extends BaseController
             $rows[] = [(string) $i, (string) rand(0, 10), "other string $i"];
         }
 
-        $this->render($this->view('table.html', [
+        $this->view('table.html', [
             'headers' => $headers,
             'rows' => $rows
-        ]));
+        ]);
     }
 }
