@@ -7,6 +7,7 @@ if (php_sapi_name() !== 'cli') {
 
 require __DIR__ . '/vendor/autoload.php';
 
+use App\Services\TermwindOutputHandler;
 use App\Services\TermwindService;
 use App\Services\TwigService;
 use Minicli\App;
@@ -21,12 +22,13 @@ $app = new App([
 ]);
 
 // Register Termwind Service
-$termwindService = new TermwindService();
-$app->addService('termwind', $termwindService);
+$app->addService('termwind', new TermwindService());
 
 // Register Twig Service
-$twigService = new TwigService();
-$app->addService('twig', $twigService);
+$app->addService('twig', new TwigService());
+
+// Register Termwind Output Handler
+$app->setOutputHandler(new TermwindOutputHandler());
 
 try {
     $app->runCommand($argv);
