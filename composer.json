@@ -1,9 +1,9 @@
 {
-  "name": "minicli/application",
-  "description": "Minicli Application Template",
+  "name": "wendelladriel/miniterm",
+  "description": "Minicli Application Template powered with Termwind and Twig",
   "license": "MIT",
-  "homepage": "https://github.com/minicli/application",
-  "keywords": ["cli","command-line", "template"],
+  "homepage": "https://github.com/wendelladriel/miniterm",
+  "keywords": ["cli","command-line", "template", "termwind", "twig", "minicli"],
   "autoload": {
     "psr-4": {
       "App\\": "app/"

@@ -4,7 +4,7 @@
         <img src="https://github.com/WendellAdriel/miniterm/raw/main/art/termwind.png" alt="Termwind" width="150"/>
         <img src="https://github.com/WendellAdriel/miniterm/raw/main/art/twig.png" alt="Twig" width="150"/>
         <h1>MiniTerm</h1>
-        Minicli template powered with Termwind and Twig
+        Minicli Application Template powered with Termwind and Twig
     </p>
 </div>
 
