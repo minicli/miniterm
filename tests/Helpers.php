@@ -1,6 +1,6 @@
 <?php
 
-use App\Services\TermwindOutputHandler;
+use App\Config\TermwindOutputHandler;
 use App\Services\TermwindService;
 use App\Services\TwigService;
 use Minicli\App;

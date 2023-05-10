@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Services;
+namespace App\Config;
 
 use Minicli\Output\OutputHandler;
+use Minicli\Output\PrinterAdapterInterface;
 
 use function Termwind\render;
 
 class TermwindOutputHandler extends OutputHandler
 {
-    private const DISPLAY_LABEL_STYLES = [
-        'text-red-400',
-        'text-red-200',
-        'text-cyan-400',
-        'text-cyan-200',
-        'text-green-400',
-        'text-green-200',
-    ];
+    private TermwindOutputConfig $config;
+
+    public function __construct(?PrinterAdapterInterface $printer = null)
+    {
+        parent::__construct($printer);
+        $this->config = new TermwindOutputConfig();
+    }
 
     public function out(string $content, string $style = "default"): void
     {
         $cssClass = $this->getCssClass($style);
-        $label = $this->getLabel($cssClass);
+        $label = $this->getLabel($style);
 
         $formatted = <<<HTML
             <div>
@@ -66,38 +66,23 @@ class TermwindOutputHandler extends OutputHandler
 
     private function getCssClass(string $style): string
     {
-        $colors = [
-            'default' => 'text-gray-400',
-            'alt' => 'text-gray-200',
-            'error' => 'text-red-400',
-            'error_alt' => 'text-red-200',
-            'info' => 'text-cyan-400',
-            'info_alt' => 'text-cyan-200',
-            'success' => 'text-green-400',
-            'success_alt' => 'text-green-200',
-            'bold' => 'font-bold',
-            'dim' => 'font-thin',
-            'italic' => 'italic',
-            'underline' => 'underline',
-            'invert' => 'bg-gray-800 text-white',
-        ];
+        $styles = $this->config->styles();
 
-        return $colors[$style] ?? 'gray-400';
+        return $styles[$style] ?? $styles['default'];
     }
 
-    private function getLabel(string $cssClass): string
+    private function getLabel(string $style): string
     {
-        if (!in_array($cssClass, self::DISPLAY_LABEL_STYLES)) {
+        if (
+            ! $this->config->enableLabels() ||
+            ! in_array($style, $this->config->stylesWithLabels())
+        ) {
             return '';
         }
 
+        $cssClass = $this->getCssClass($style);
         $color = str_replace('text-', 'bg-', $cssClass);
-        $label = match ($cssClass) {
-            'text-red-400', 'text-red-200' => 'ERROR',
-            'text-cyan-400', 'text-cyan-200' => 'INFO',
-            'text-green-400', 'text-green-200' => 'SUCCESS',
-            default => 'INFO',
-        };
+        $label = str_replace('_ALT', '', strtoupper($style));
 
         return "<div class='px-1 $color text-black'>$label</div>";
     }
