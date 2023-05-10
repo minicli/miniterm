@@ -10,7 +10,6 @@ require __DIR__ . '/vendor/autoload.php';
 use App\Config\TermwindOutputHandler;
 use App\Services\PlatesService;
 use App\Services\TermwindService;
-use App\Services\TwigService;
 use Minicli\App;
 use Minicli\Exception\CommandNotFoundException;
 
@@ -24,9 +23,6 @@ $app = new App([
 
 // Register Termwind Service
 $app->addService('termwind', new TermwindService());
-
-// Register Twig Service
-$app->addService('twig', new TwigService());
 
 // Register Plates Service
 $app->addService('plates', new PlatesService());

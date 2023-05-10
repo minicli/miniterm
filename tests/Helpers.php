@@ -3,7 +3,6 @@
 use App\Config\TermwindOutputHandler;
 use App\Services\PlatesService;
 use App\Services\TermwindService;
-use App\Services\TwigService;
 use Minicli\App;
 use Minicli\Command\CommandCall;
 use Symfony\Component\Console\Output\BufferedOutput;
@@ -23,7 +22,6 @@ function getApp(): App
 
     $app = new App($config);
     $app->addService('termwind', new TermwindService());
-    $app->addService('twig', new TwigService());
     $app->addService('plates', new PlatesService());
     $app->setOutputHandler(new TermwindOutputHandler());
 
