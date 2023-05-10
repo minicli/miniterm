@@ -6,9 +6,6 @@ use Minicli\Command\CommandController;
 use Symfony\Component\Console\Output\OutputInterface;
 use Termwind\Terminal;
 use Termwind\ValueObjects\Style;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
 
 abstract class BaseController extends CommandController
 {
@@ -32,15 +29,10 @@ abstract class BaseController extends CommandController
         return $this->getApp()->termwind->ask($question, $autocomplete);
     }
 
-    /**
-     * @throws RuntimeError
-     * @throws SyntaxError
-     * @throws LoaderError
-     */
     protected function view(string $template, array $data = []): void
     {
         $app = $this->getApp();
 
-        $app->termwind->render($app->twig->view($template, $data));
+        $app->termwind->render($app->plates->view($template, $data));
     }
 }

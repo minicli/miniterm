@@ -3,17 +3,9 @@
 namespace App\Command\Demo;
 
 use App\Command\BaseController;
-use Twig\Error\LoaderError;
-use Twig\Error\RuntimeError;
-use Twig\Error\SyntaxError;
 
 class TableController extends BaseController
 {
-    /**
-     * @throws RuntimeError
-     * @throws SyntaxError
-     * @throws LoaderError
-     */
     public function handle(): void
     {
         $headers = ['Header 1', 'Header 2', 'Header 3'];
@@ -23,7 +15,7 @@ class TableController extends BaseController
             $rows[] = [(string) $i, (string) rand(0, 10), "other string $i"];
         }
 
-        $this->view('table.html', [
+        $this->view('table', [
             'headers' => $headers,
             'rows' => $rows
         ]);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Config\TermwindOutputHandler;
+use App\Services\PlatesService;
 use App\Services\TermwindService;
 use App\Services\TwigService;
 use Minicli\App;
@@ -23,6 +24,7 @@ function getApp(): App
     $app = new App($config);
     $app->addService('termwind', new TermwindService());
     $app->addService('twig', new TwigService());
+    $app->addService('plates', new PlatesService());
     $app->setOutputHandler(new TermwindOutputHandler());
 
     return $app;
