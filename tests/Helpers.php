@@ -35,7 +35,12 @@ function getProdApp(): App
         'debug' => false
     ];
 
-    return new App($config);
+    $app = new App($config);
+    $app->addService('termwind', new TermwindService());
+    $app->addService('plates', new PlatesService());
+    $app->setOutputHandler(new TermwindOutputHandler());
+
+    return $app;
 }
 
 function getCommandCall(array $parameters = null): CommandCall

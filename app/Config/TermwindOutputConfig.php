@@ -15,6 +15,8 @@ class TermwindOutputConfig
             'info_alt' => 'text-cyan-400',
             'success' => 'text-green-600',
             'success_alt' => 'text-green-400',
+            'warning' => 'text-yellow-600',
+            'warning_alt' => 'text-yellow-400',
             'bold' => 'font-bold',
             'dim' => 'text-gray-500',
             'italic' => 'italic',
@@ -37,6 +39,8 @@ class TermwindOutputConfig
             'success_alt',
             'error',
             'error_alt',
+            'warning',
+            'warning_alt',
         ];
     }
 }

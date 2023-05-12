@@ -64,6 +64,11 @@ class TermwindOutputHandler extends OutputHandler
         $this->out($content, $alt ? 'success_alt' : 'success');
     }
 
+    public function warning(string $content, bool $alt = false): void
+    {
+        $this->out($content, $alt ? 'warning_alt' : 'warning');
+    }
+
     private function getCssClass(string $style): string
     {
         $styles = $this->config->styles();
