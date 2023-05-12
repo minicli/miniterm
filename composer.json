@@ -1,8 +1,8 @@
 {
-  "name": "wendelladriel/miniterm",
+  "name": "minicli/miniterm",
   "description": "Minicli Application Template powered with Termwind and Plates",
   "license": "MIT",
-  "homepage": "https://github.com/wendelladriel/miniterm",
+  "homepage": "https://github.com/minicli/miniterm",
   "keywords": ["cli","command-line", "template", "termwind", "plates", "minicli"],
   "autoload": {
     "psr-4": {
