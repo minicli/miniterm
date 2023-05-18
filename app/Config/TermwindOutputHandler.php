@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Config;
 
 use Minicli\Output\OutputHandler;
@@ -23,9 +25,9 @@ class TermwindOutputHandler extends OutputHandler
 
         $formatted = <<<HTML
             <div>
-                $label
-                <span class="ml-1 $cssClass">
-                  $content
+                {$label}
+                <span class="ml-1 {$cssClass}">
+                  {$content}
                 </span>
             </div>
         HTML;
@@ -86,8 +88,8 @@ class TermwindOutputHandler extends OutputHandler
 
         $cssClass = $this->getCssClass($style);
         $color = str_replace('text-', 'bg-', $cssClass);
-        $label = str_replace('_ALT', '', strtoupper($style));
+        $label = str_replace('_ALT', '', mb_strtoupper($style));
 
-        return "<div class='px-1 $color text-black'>$label</div>";
+        return "<div class='px-1 {$color} text-black'>{$label}</div>";
     }
 }

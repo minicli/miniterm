@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test" : ["pest"],
-    "lint" : ["pint"]
+    "lint" : ["pint"],
+    "lint:test" : ["pint --test"]
   },
   "config": {
     "allow-plugins": {

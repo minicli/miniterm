@@ -1,20 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 use Minicli\App;
 use Minicli\ServiceInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
+use Termwind\Terminal;
+use Termwind\ValueObjects\Style;
+
 use function Termwind\ask;
+
 use function Termwind\render;
+
 use function Termwind\style;
 
-use Termwind\Terminal;
-
 use function Termwind\terminal;
-
-use Termwind\ValueObjects\Style;
 
 class TermwindService implements ServiceInterface
 {

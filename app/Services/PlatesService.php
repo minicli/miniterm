@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 use League\Plates\Engine;
@@ -12,7 +14,7 @@ class PlatesService implements ServiceInterface
 
     public function __construct()
     {
-        $this->plates = new Engine(__DIR__ . '/../../app/Views');
+        $this->plates = new Engine(__DIR__.'/../../app/Views');
     }
 
     public function view(string $template, array $data = []): string
