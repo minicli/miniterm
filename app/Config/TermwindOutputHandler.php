@@ -3,7 +3,6 @@
 namespace App\Config;
 
 use Minicli\Output\OutputHandler;
-use Minicli\Output\PrinterAdapterInterface;
 
 use function Termwind\render;
 
@@ -11,9 +10,9 @@ class TermwindOutputHandler extends OutputHandler
 {
     private TermwindOutputConfig $config;
 
-    public function __construct(?PrinterAdapterInterface $printer = null)
+    public function __construct()
     {
-        parent::__construct($printer);
+        parent::__construct();
         $this->config = new TermwindOutputConfig();
     }
 

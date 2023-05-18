@@ -4,8 +4,5 @@
         "ordered_imports": {
             "sort_algorithm": "alpha"
         }
-    },
-    "exclude": [
-        "app/Views/cache/*"
-    ]
+    }
 }
