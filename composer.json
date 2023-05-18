@@ -21,9 +21,13 @@
     "laravel/pint": "^1.10"
   },
   "scripts": {
-    "test" : ["pest"],
     "lint" : ["pint"],
-    "lint:test" : ["pint --test"]
+    "test:lint" : ["pint --test"],
+    "test:unit" : ["pest"],
+    "test": [
+      "@test:lint",
+      "@test:unit"
+    ]
   },
   "config": {
     "allow-plugins": {
