@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a9744069ae3cbf0c333bebd5db3fbae",
+    "content-hash": "4d06f4cf700ffc72267226399e9f8ae6",
     "packages": [
         {
             "name": "league/plates",
@@ -72,20 +72,23 @@
         },
         {
             "name": "minicli/command-help",
-            "version": "0.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/command-help.git",
-                "reference": "f8cbb80bad2aa2fc0896d1b8048e6098f0a18d87"
+                "reference": "5f95b71db9585cd21a8b24ce3e5425a4bdf7e0e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/command-help/zipball/f8cbb80bad2aa2fc0896d1b8048e6098f0a18d87",
-                "reference": "f8cbb80bad2aa2fc0896d1b8048e6098f0a18d87",
+                "url": "https://api.github.com/repos/minicli/command-help/zipball/5f95b71db9585cd21a8b24ce3e5425a4bdf7e0e6",
+                "reference": "5f95b71db9585cd21a8b24ce3e5425a4bdf7e0e6",
                 "shasum": ""
             },
             "require": {
-                "minicli/minicli": "^3.0"
+                "minicli/minicli": "^4.0"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.10"
             },
             "type": "library",
             "autoload": {
@@ -106,32 +109,33 @@
             ],
             "support": {
                 "issues": "https://github.com/minicli/command-help/issues",
-                "source": "https://github.com/minicli/command-help/tree/0.1"
+                "source": "https://github.com/minicli/command-help/tree/1.0.0"
             },
-            "time": "2022-06-02T17:42:18+00:00"
+            "time": "2023-05-18T10:14:01+00:00"
         },
         {
             "name": "minicli/minicli",
-            "version": "3.2.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/minicli/minicli.git",
-                "reference": "2d31b303461d0ec1f8c6d0be00f8b26be8766fbe"
+                "reference": "2922ad8a07b66616b28f28aa1a3a39b7c626408c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minicli/minicli/zipball/2d31b303461d0ec1f8c6d0be00f8b26be8766fbe",
-                "reference": "2d31b303461d0ec1f8c6d0be00f8b26be8766fbe",
+                "url": "https://api.github.com/repos/minicli/minicli/zipball/2922ad8a07b66616b28f28aa1a3a39b7c626408c",
+                "reference": "2922ad8a07b66616b28f28aa1a3a39b7c626408c",
                 "shasum": ""
             },
             "require": {
                 "ext-readline": "*",
-                "php": ">=8"
+                "php": ">=8.1"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^3.5",
-                "pestphp/pest": "^1.0",
-                "phpunit/phpunit": "^9.0"
+                "mockery/mockery": "^1.5",
+                "pestphp/pest": "^2.5",
+                "phpstan/phpstan": "^1.10"
             },
             "type": "library",
             "autoload": {
@@ -151,7 +155,7 @@
             ],
             "support": {
                 "issues": "https://github.com/minicli/minicli/issues",
-                "source": "https://github.com/minicli/minicli/tree/3.2.1"
+                "source": "https://github.com/minicli/minicli/tree/4.0.2"
             },
             "funding": [
                 {
@@ -159,7 +163,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-23T09:04:22+00:00"
+            "time": "2023-05-18T09:57:29+00:00"
         },
         {
             "name": "nunomaduro/termwind",
@@ -3144,7 +3148,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=8"
+        "php": ">=8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"

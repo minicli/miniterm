@@ -33,12 +33,12 @@ $app->setOutputHandler(new TermwindOutputHandler());
 try {
     $app->runCommand($argv);
 } catch (CommandNotFoundException $notFoundException) {
-    $app->getPrinter()->error("Command Not Found.");
+    $app->error("Command Not Found.");
     return 1;
 } catch (Exception $exception) {
     if ($app->config->debug) {
-        $app->getPrinter()->error("An error occurred:");
-        $app->getPrinter()->error($exception->getMessage());
+        $app->error("An error occurred:");
+        $app->error($exception->getMessage());
     }
     return 1;
 }

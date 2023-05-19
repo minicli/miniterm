@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Config\TermwindOutputHandler;
 use App\Services\PlatesService;
 use App\Services\TermwindService;
@@ -11,7 +13,7 @@ use function Termwind\renderUsing;
 
 function getCommandsPath(): string
 {
-    return __DIR__ . '/../app/Command';
+    return __DIR__.'/../app/Command';
 }
 
 function getApp(): App

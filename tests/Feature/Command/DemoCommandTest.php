@@ -1,6 +1,8 @@
 <?php
 
-test('default command "demo" is correctly loaded', function () {
+declare(strict_types=1);
+
+test('default command "demo" is correctly loaded', function (): void {
     $output = getOutput();
 
     $app = getApp();
@@ -9,7 +11,7 @@ test('default command "demo" is correctly loaded', function () {
     expect($output->fetch())->toContain('help');
 });
 
-test('the "demo test" command echoes command parameters', function () {
+test('the "demo test" command echoes command parameters', function (): void {
     $output = getOutput();
 
     $app = getApp();
@@ -18,7 +20,7 @@ test('the "demo test" command echoes command parameters', function () {
     expect($output->fetch())->toContain('Hello, erika');
 });
 
-test('the "demo table" command prints test table', function () {
+test('the "demo table" command prints test table', function (): void {
     $output = getOutput();
 
     $app = getApp();
