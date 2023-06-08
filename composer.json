@@ -17,7 +17,7 @@
     "league/plates": "^3.5"
   },
   "require-dev": {
-    "pestphp/pest": "^1.21",
+    "pestphp/pest": "^1.23",
     "laravel/pint": "^1.10"
   },
   "scripts": {
