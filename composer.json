@@ -11,7 +11,7 @@
   },
   "require": {
     "php": ">=8.1",
-    "minicli/minicli": "^4.1",
+    "minicli/minicli": "^4.2",
     "minicli/command-help": "^1.0",
     "nunomaduro/termwind": "^1.15",
     "league/plates": "^3.5"
