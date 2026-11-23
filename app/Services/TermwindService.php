@@ -7,16 +7,12 @@ namespace App\Services;
 use Minicli\App;
 use Minicli\ServiceInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-
 use Termwind\Terminal;
 use Termwind\ValueObjects\Style;
 
 use function Termwind\ask;
-
 use function Termwind\render;
-
 use function Termwind\style;
-
 use function Termwind\terminal;
 
 class TermwindService implements ServiceInterface
